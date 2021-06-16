@@ -27,7 +27,20 @@ const getLongURL = async (shortCode) => {
     })
 }
 
+const getShortCode = async (longURL) => {
+    return await shortCodeModel.findOne({
+        longURL: longURL
+    }, (err, data) => {
+        if(err) {
+            console.log("Error retriving data from DB : ", err)
+        } else {
+            return data.longURL
+        }
+    })
+}
+
 module.exports = {
     createShortURL,
-    getLongURL
+    getLongURL,
+    getShortCode
 }
