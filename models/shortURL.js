@@ -5,16 +5,6 @@ const shorturlSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    noOfVisits: {
-        type: Number,
-        required: true,
-        default: 0
-    },
-    lastVisited: {
-        type: Number,
-        required: true,
-        default: Date.now()
-    },
     shortCode: {
         type: String,
         required: true

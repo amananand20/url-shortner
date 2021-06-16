@@ -1,4 +1,4 @@
-const route = require("express").Router
+const route = require("express").Router()
 
 const {createShortURL} = require("../../controllers/shortURL")
 const {ifLongURLAvailable, validateShortCode} = require("../../middlewares/middleware")

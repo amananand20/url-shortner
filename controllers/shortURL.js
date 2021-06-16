@@ -22,7 +22,7 @@ const getLongURL = async (shortCode) => {
         if(err) {
             console.log("Error retriving data from DB : ", err)
         } else {
-            return data.longURL
+            return data
         }
     })
 }
@@ -34,7 +34,7 @@ const getShortCode = async (longURL) => {
         if(err) {
             console.log("Error retriving data from DB : ", err)
         } else {
-            return data.longURL
+            return data
         }
     })
 }

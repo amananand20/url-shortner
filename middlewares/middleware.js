@@ -1,7 +1,7 @@
 const {getLongURL,getShortCode} = require("../controllers/shortURL")
 
 function createShortCode() {
-    let result = new Array()
+    let result = ""
     let characterPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     for ( var i = 0; i < 5; i++ ) {
         result += characterPool.charAt(Math.floor(Math.random() * 5));
@@ -19,11 +19,11 @@ const validateShortCode = async (req, res, next) => {
 }
 
 const ifLongURLAvailable = async (req, res, next) => {
-    const shortCode = await getShortCode(req.body.longURL)
-    if(shortCode) {
+    const shortCodeData = await getShortCode(req.body.longURL)
+    if(shortCodeData) {
         res.status(201).json({
             status: "success",
-            shortCode: shortCode
+            shortCode: shortCodeData.shortCode
         })
     } else {
         next()
