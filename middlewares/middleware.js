@@ -4,7 +4,7 @@ function createShortCode() {
     let result = ""
     let characterPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     for ( var i = 0; i < 5; i++ ) {
-        result += characterPool.charAt(Math.floor(Math.random() * 5));
+        result += characterPool.charAt(Math.floor(Math.random() * characterPool.length));
     }
     return result;
 }
