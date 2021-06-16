@@ -15,19 +15,19 @@ const createShortURL = (body) => {
     })
 }
 
-const getShortURL = async (shortCode) => {
+const getLongURL = async (shortCode) => {
     return await shortCodeModel.findOne({
         shortCode: shortCode
     }, (err, data) => {
         if(err) {
             console.log("Error retriving data from DB : ", err)
         } else {
-            return data
+            return data.longURL
         }
     })
 }
 
 module.exports = {
     createShortURL,
-    getShortURL
+    getLongURL
 }
