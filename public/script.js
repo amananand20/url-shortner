@@ -7,7 +7,7 @@ btnShort.click(() => {
     $.post("/api/create", {
         longURL: inpLink.val()
     }, (data) => {
-        inpDisplay.val(`shrt.lk/${data.shortCode}`);
+        inpDisplay.val(`{"domain"}/${data.shortCode}`);
     });
 });
 
